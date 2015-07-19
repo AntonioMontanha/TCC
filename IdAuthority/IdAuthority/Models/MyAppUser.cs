@@ -16,6 +16,8 @@ namespace IdAuthority.Models
         [FacebookFieldModifier("type(large)")] // This sets the picture size to large.
         public FacebookConnection<FacebookPicture> ProfilePicture { get; set; }
 
+
+        // TODO: Verificar o que esse FieldModifier faz, e decidir se terá um limite ou não. Dica: F12 na classe.
         [FacebookFieldModifier("limit(8)")] // This sets the size of the friend list to 8, remove it to get all friends.
         public FacebookGroupConnection<MyAppUserFriend> Friends { get; set; }
 
