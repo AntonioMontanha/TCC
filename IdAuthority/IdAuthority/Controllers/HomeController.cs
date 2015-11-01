@@ -13,7 +13,9 @@ namespace IdAuthority.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await context.Client.GetCurrentUserAsync<MyAppUser>();
+                var user = await context.Client.
+                    GetCurrentUserAsync<MyAppUser>();
+                
                 return View(user);
             }
 
