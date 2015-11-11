@@ -145,7 +145,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Search.cs" />
-    <Compile Include="Models\Authority\CognitiveAuthority.cs" />
     <Compile Include="Models\MyAppUserFriend.cs" />
     <Compile Include="Models\MyAppUser.cs" />
     <Compile Include="Models\FacebookPicture.cs" />
@@ -159,11 +158,14 @@
     <Content Include="Images\arrow.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="packages.config" />
     <None Include="readme.txt" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\IndexController.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\MainController.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -186,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Authority\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

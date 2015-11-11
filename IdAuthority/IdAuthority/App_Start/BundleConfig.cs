@@ -16,6 +16,13 @@ namespace IdAuthority
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.min.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+                        "~/Scripts/MainController.js", "~/Scripts/IndexController.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/site.css"));
 

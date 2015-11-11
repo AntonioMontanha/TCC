@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Facebook;
 using Microsoft.AspNet.Facebook.Client;
@@ -13,7 +14,9 @@ namespace IdAuthority.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await context.Client.GetCurrentUserAsync<MyAppUser>();
+                var user = await context.Client.
+                    GetCurrentUserAsync<MyAppUser>();
+                
                 return View(user);
             }
 
@@ -36,6 +39,11 @@ namespace IdAuthority.Controllers
         public ActionResult CannotCreateCookie()
         {
             return View("Error");
+        }
+
+        public string Search(string PalavraChave)
+        {
+            throw new NotImplementedException();
         }
     }
 }
