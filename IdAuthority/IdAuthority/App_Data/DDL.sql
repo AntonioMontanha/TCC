@@ -1,0 +1,16 @@
+﻿CREATE TABLE User_Expertise (
+							 ID INTEGER PRIMARY KEY, 
+							 usuario VARCHAR (100, 100), 
+							 Historia BOOLEAN, 
+							 Geografia BOOLEAN, 
+							 Biologia INTEGER, 
+							 Sociologia BOOLEAN, 
+							 Filosofia BOOLEAN, 
+							 Matematica BOOLEAN, 
+							 Literatura BOOLEAN, 
+							 Gramatica BOOLEAN, 
+							 Fisica BOOLEAN, 
+							 Quimica BOOLEAN, 
+							 Politica BOOLEAN, 
+							 Musica BOOLEAN, 
+							 Cinema BOOLEAN);

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Facebook;
 using Microsoft.AspNet.Facebook.Client;
 using IdAuthority.Models;
+//using System.Data.SQLite;
 
 namespace IdAuthority.Controllers
 {
@@ -16,16 +16,13 @@ namespace IdAuthority.Controllers
             {
                 var user = await context.Client.
                     GetCurrentUserAsync<MyAppUser>();
-                
+
                 return View(user);
             }
 
             return View("Error");
         }
 
-        // This action will handle the redirects from FacebookAuthorizeFilter when
-        // the app doesn't have all the required permissions specified in the FacebookAuthorizeAttribute.
-        // The path to this action is defined under appSettings (in Web.config) with the key 'Facebook:AuthorizationRedirectPath'.
         public ActionResult Permissions(FacebookRedirectContext context)
         {
             if (ModelState.IsValid)
@@ -35,15 +32,58 @@ namespace IdAuthority.Controllers
 
             return View("Error");
         }
-        // This action will handle the redirects when the framework cannot create cookies
         public ActionResult CannotCreateCookie()
         {
             return View("Error");
         }
 
-        public string Search(string PalavraChave)
+
+        [HttpGet]
+        public ActionResult Search(string PalavraChave)
         {
-            throw new NotImplementedException();
+            // Aqui implementar a lógica de busca dos posts
+
+            return View("Error");
         }
+
+        #region Banco De Dados - Jogar pra outra Classe se der tempo.
+        //private string _ConnectionString = @"Data Source=..\App_Data\BancoDeDados.db;" +
+        //                                     "Version=3;";
+
+        //private SQLiteConnection Conexao;
+
+        //public SQLiteConnection AbreConexão()
+        //{
+        //    if (Conexao == null)
+        //    {
+        //        Conexao = new SQLiteConnection(_ConnectionString);
+        //    }
+        //    Conexao.Open();
+        //    return Conexao;
+        //}
+
+        //public void FechaConexão()
+        //{
+        //    Conexao.Close();
+        //}
+
+
+        //public void Salva()
+        //{
+        //    string sqlSalva = @"INSERT INTO User_Expertise (Nome,Endereco,Telefone) VALUES (@nome,@end,@tel)";
+
+        //    SQLiteCommand command = new SQLiteCommand(sqlSalva, AbreConexão());
+        //    command.CommandText = sqlSalva;
+        //    //command.Parameters.AddWithValue("@nome", NomeMissionaria);
+        //    //command.Parameters.AddWithValue("@end", EnderecoMissionaria);
+        //    //command.Parameters.AddWithValue("@tel", TelefoneMissionaria);
+        //    command.ExecuteNonQuery();
+        //    FechaConexão();
+        //}
+
+
+
+        #endregion
+
     }
 }
