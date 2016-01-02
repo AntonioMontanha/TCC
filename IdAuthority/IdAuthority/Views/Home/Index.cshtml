@@ -5,6 +5,9 @@
     ViewBag.Title = "Home Page";
 }
 
+
+<script src="@Url.Content("~/Scripts/ApplicationScripts/AjaxCalls.js")"></script>
+
 <article class="intro">
     <span id="profilePicture">
         @if (Model.ProfilePicture != null && Model.ProfilePicture.Data != null)
@@ -21,44 +24,43 @@
         <h4>Cadastre sua especialidade !</h4>
         <br>
         @Html.Label("História")
-        @Html.CheckBox("Historia")
+        <input type="checkbox" name="historia" value="História">
         <br>
         @Html.Label("Geografia")
-        @Html.CheckBox("Geografia")
+        <input type="checkbox" name="geografia" value="Geografia">
         <br>
         @Html.Label("Biologia")
-        @Html.CheckBox("Biologia")
+        <input type="checkbox" name="biologia" value="Biologia">
         <br>
         @Html.Label("Sociologia")
-        @Html.CheckBox("Sociologia")
+        <input type="checkbox" name="sociologia" value="Sociologia">
         <br>
         @Html.Label("Filosofia")
-        @Html.CheckBox("Filosofia")
+        <input type="checkbox" name="filosofia" value="Filosofia">
         <br>
         @Html.Label("Matemática")
-        @Html.CheckBox("Matematica")
+        <input type="checkbox" name="matematica" value="Matemática">
         <br>
         @Html.Label("Literatura")
-        @Html.CheckBox("Literatura")
+        <input type="checkbox" name="literatura" value="Literatura">
         <br>
         @Html.Label("Gramática")
-        @Html.CheckBox("Gramatica")
+        <input type="checkbox" name="gramatica" value="Gramática">
         <br>
         @Html.Label("Física")
-        @Html.CheckBox("Fisica")
+        <input type="checkbox" name="fisica" value="Física">
         <br>
         @Html.Label("Química")
-        @Html.CheckBox("Quimica")
+        <input type="checkbox" name="quimica" value="Química">
         <br>
         @Html.Label("Política")
-        @Html.CheckBox("Politica")
+        <input type="checkbox" name="politica" value="Política">
         <br>
         @Html.Label("Música")
-        @Html.CheckBox("Musica")
+        <input type="checkbox" name="musica" value="Música">
         <br>
         @Html.Label("Cinema")
-        @Html.CheckBox("Cinema")
-        
+        <input type="checkbox" name="cinema" value="Cinema">
     </div>
     <div class="right">
         <h4>Palavra Chave</h4>
