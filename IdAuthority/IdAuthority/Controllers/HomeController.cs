@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Facebook;
 using Microsoft.AspNet.Facebook.Client;
 using IdAuthority.Models;
-//using System.Data.SQLite;
 
 namespace IdAuthority.Controllers
 {
@@ -46,44 +45,15 @@ namespace IdAuthority.Controllers
             return View("Error");
         }
 
-        #region Banco De Dados - Jogar pra outra Classe se der tempo.
-        //private string _ConnectionString = @"Data Source=..\App_Data\BancoDeDados.db;" +
-        //                                     "Version=3;";
+        public ActionResult ConfirmarExpertise()
+        {
+            return View();
+        }
 
-        //private SQLiteConnection Conexao;
-
-        //public SQLiteConnection AbreConexão()
-        //{
-        //    if (Conexao == null)
-        //    {
-        //        Conexao = new SQLiteConnection(_ConnectionString);
-        //    }
-        //    Conexao.Open();
-        //    return Conexao;
-        //}
-
-        //public void FechaConexão()
-        //{
-        //    Conexao.Close();
-        //}
-
-
-        //public void Salva()
-        //{
-        //    string sqlSalva = @"INSERT INTO User_Expertise (Nome,Endereco,Telefone) VALUES (@nome,@end,@tel)";
-
-        //    SQLiteCommand command = new SQLiteCommand(sqlSalva, AbreConexão());
-        //    command.CommandText = sqlSalva;
-        //    //command.Parameters.AddWithValue("@nome", NomeMissionaria);
-        //    //command.Parameters.AddWithValue("@end", EnderecoMissionaria);
-        //    //command.Parameters.AddWithValue("@tel", TelefoneMissionaria);
-        //    command.ExecuteNonQuery();
-        //    FechaConexão();
-        //}
-
-
-
-        #endregion
-
+        [HttpPost]
+        public ActionResult ConfirmarExpertise(MyAppUser model)
+        {
+            return View("Index");
+        }
     }
 }

@@ -1,67 +1,91 @@
-﻿@using IdAuthority.Models
+﻿@using System.Web.UI.WebControls
+@using IdAuthority.Models
+@using IdAuthority.Models.Search
 @using Microsoft.AspNet.Facebook.Models
 @model MyAppUser
 @{
     ViewBag.Title = "Home Page";
 }
 
-
 <script src="@Url.Content("~/Scripts/ApplicationScripts/AjaxCalls.js")"></script>
 
-<article class="intro">
-    <span id="profilePicture">
-        @if (Model.ProfilePicture != null && Model.ProfilePicture.Data != null)
-        {
-            <img src="@Model.ProfilePicture.Data.Url" />
-        }
-    </span>
-    <h3>Welcome @Model.Name</h3>
-    <label>Email: @Model.Email</label>
-</article>
-
 <article id="content">
-    <div class="left">
-        <h4>Cadastre sua especialidade !</h4>
-        <br>
-        @Html.Label("História")
-        <input type="checkbox" name="historia" value="História">
-        <br>
-        @Html.Label("Geografia")
-        <input type="checkbox" name="geografia" value="Geografia">
-        <br>
-        @Html.Label("Biologia")
-        <input type="checkbox" name="biologia" value="Biologia">
-        <br>
-        @Html.Label("Sociologia")
-        <input type="checkbox" name="sociologia" value="Sociologia">
-        <br>
-        @Html.Label("Filosofia")
-        <input type="checkbox" name="filosofia" value="Filosofia">
-        <br>
-        @Html.Label("Matemática")
-        <input type="checkbox" name="matematica" value="Matemática">
-        <br>
-        @Html.Label("Literatura")
-        <input type="checkbox" name="literatura" value="Literatura">
-        <br>
-        @Html.Label("Gramática")
-        <input type="checkbox" name="gramatica" value="Gramática">
-        <br>
-        @Html.Label("Física")
-        <input type="checkbox" name="fisica" value="Física">
-        <br>
-        @Html.Label("Química")
-        <input type="checkbox" name="quimica" value="Química">
-        <br>
-        @Html.Label("Política")
-        <input type="checkbox" name="politica" value="Política">
-        <br>
-        @Html.Label("Música")
-        <input type="checkbox" name="musica" value="Música">
-        <br>
-        @Html.Label("Cinema")
-        <input type="checkbox" name="cinema" value="Cinema">
-    </div>
+    @using (Html.BeginForm("ConfirmarExpertise", "Home"))
+    {
+        <div class="left" id="expertise">
+            <h4>Cadastre sua especialidade !</h4>
+            <tr>
+                <td>
+                    @Html.Label("História")
+                    @Html.CheckBoxFor(x => x.Historia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Geografia")
+                    @Html.CheckBoxFor(x => x.Geografia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Biologia")
+                    <input type="checkbox" name="biologia" value="Biologia">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Sociologia")
+                    <input type="checkbox" name="sociologia" value="Sociologia">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Filosofia")
+                    <input type="checkbox" name="filosofia" value="Filosofia">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Matemática")
+                    <input type="checkbox" name="matematica" value="Matemática">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Literatura")
+                    <input type="checkbox" name="literatura" value="Literatura">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Gramática")
+                    <input type="checkbox" name="gramatica" value="Gramática">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Física")
+                    <input type="checkbox" name="fisica" value="Física">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Química")
+                    <input type="checkbox" name="quimica" value="Química">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Política")
+                    <input type="checkbox" name="politica" value="Política">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Música")
+                    <input type="checkbox" name="musica" value="Música">
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Cinema")
+                    <input type="checkbox" name="cinema" value="Cinema">
+                    <br>
+                </td>
+                <td>
+                    <a id="btnFeito" href="@Url.Action("ConfirmarExpertise")" title="Buscar">Feito!</a>
+                </td>
+            </tr>
+        </div>
+    }
     <div class="right">
         <h4>Palavra Chave</h4>
         @Html.TextBox("ParametroBusca1")
@@ -71,9 +95,10 @@
         @Html.TextBox("ParametroBusca3")
         <br>
 
-        <a href="@Url.Action("Search", new {palavraChave = "Qualquer coisa" })"
+        <a href="@Url.Action("Search", new {palavraChave = "Qualquer coisa"})"
            title="Buscar">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDElEQVQ4T52SvW0CQRBG33VACZbcACUgKrDcgBEhEaFDKkA04J/QEaIEKkCIiJAS7AYMemgH761vg2Ol083N7bz55qfh7zwAk+xbcwAsgO/Cf/tskhWBJ+AF+AHOwAcwBT6BfRdEgJlHKYv2Nvk2KbvQYU2JACUa5KUAGBzH/2tgDKxKFQEw0J++82Dv63vK+tFiBMBmqaIMzlVoq6YKmFc6bWlRXidA6e/Ac1eGNIE34DHZ/xTErB2T9Tqy6LyqTPALHGpj1K9ELy9Tt4UK2QGvKXDWtVCxSLF1LpTBcYSoSN8XcCz3IQfUtjX8luJjI1V7Xe8+AFUE4AbpA4gyW5C+gBIyvwcQkOtSXQBC8TlBlRvciwAAAABJRU5ErkJggg==" />
         </a>
     </div>
+
 </article>

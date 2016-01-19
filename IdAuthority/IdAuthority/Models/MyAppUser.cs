@@ -12,25 +12,23 @@ namespace IdAuthority.Models
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public string Historia { get; set; }
-        public string Geografia { get; set; }
-        public string Biologia { get; set; }
-        public string Sociologia { get; set; }
-        public string Filosofia { get; set; }
-        public string Matematica { get; set; }
-        public string Literatura { get; set; }
-        public string Gramatica { get; set; }
-        public string Fisica { get; set; }
-        public string Politica { get; set; }
-        public string Musica { get; set; }
-        public string Cinema { get; set; }
+        public bool Historia { get; set; }
+        public bool Geografia { get; set; }
+        public bool Biologia { get; set; }
+        public bool Sociologia { get; set; }
+        public bool Filosofia { get; set; }
+        public bool Matematica { get; set; }
+        public bool Literatura { get; set; }
+        public bool Gramatica { get; set; }
+        public bool Fisica { get; set; }
+        public bool Politica { get; set; }
+        public bool Musica { get; set; }
+        public bool Cinema { get; set; }
 
         [JsonProperty("picture")] // This renames the property to picture.
         [FacebookFieldModifier("type(large)")] // This sets the picture size to large.
         public FacebookConnection<FacebookPicture> ProfilePicture { get; set; }
 
-
-        // TODO: Verificar o que esse FieldModifier faz, e decidir se terá um limite ou não. Dica: F12 na classe.
         [FacebookFieldModifier("limit(8)")] // This sets the size of the friend list to 8, remove it to get all friends.
         public FacebookGroupConnection<MyAppUserFriend> Friends { get; set; }
 
