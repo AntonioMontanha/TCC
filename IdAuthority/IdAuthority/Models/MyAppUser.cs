@@ -21,6 +21,7 @@ namespace IdAuthority.Models
         public bool Literatura { get; set; }
         public bool Gramatica { get; set; }
         public bool Fisica { get; set; }
+        public bool Quimica { get; set; }
         public bool Politica { get; set; }
         public bool Musica { get; set; }
         public bool Cinema { get; set; }

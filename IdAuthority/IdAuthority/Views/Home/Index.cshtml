@@ -8,6 +8,18 @@
 }
 <script src="@Url.Content("~/Scripts/ApplicationScripts/AjaxCalls.js")"></script>
 
+<article class="intro">
+    <span id="profilePicture">
+        @if (Model.ProfilePicture != null && Model.ProfilePicture.Data != null)
+        {
+            <img src="@Model.ProfilePicture.Data.Url" />
+        }
+    </span>
+    <h3>Welcome @Model.Name</h3>
+    <label>Email: @Model.Email</label>
+</article>
+
+
 <article id="content">
     @using (Html.BeginForm("ConfirmarExpertise", "Home"))
     {
@@ -26,61 +38,61 @@
                 </td>
                 <td>
                     @Html.Label("Biologia")
-                    <input type="checkbox" name="Biologia" value="Biologia">
+                    @Html.CheckBoxFor(x => x.Biologia)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Sociologia")
-                    <input type="checkbox" name="sociologia" value="Sociologia">
+                    @Html.CheckBoxFor(x => x.Sociologia)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Filosofia")
-                    <input type="checkbox" name="filosofia" value="Filosofia">
+                    @Html.CheckBoxFor(x => x.Filosofia)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Matemática")
-                    <input type="checkbox" name="matematica" value="Matemática">
+                    @Html.CheckBoxFor(x => x.Matematica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Literatura")
-                    <input type="checkbox" name="literatura" value="Literatura">
+                    @Html.CheckBoxFor(x => x.Literatura)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Gramática")
-                    <input type="checkbox" name="gramatica" value="Gramática">
+                    @Html.CheckBoxFor(x => x.Gramatica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Física")
-                    <input type="checkbox" name="fisica" value="Física">
+                    @Html.CheckBoxFor(x => x.Fisica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Química")
-                    <input type="checkbox" name="quimica" value="Química">
+                    @Html.CheckBoxFor(x => x.Quimica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Política")
-                    <input type="checkbox" name="politica" value="Política">
+                    @Html.CheckBoxFor(x => x.Politica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Música")
-                    <input type="checkbox" name="musica" value="Música">
+                    @Html.CheckBoxFor(x => x.Musica)
                     <br>
                 </td>
                 <td>
                     @Html.Label("Cinema")
-                    <input type="text" name="cinema" value="Cinema">
+                    @Html.CheckBoxFor(x => x.Cinema)
                     <br>
                 </td>
                 <td>
-                    <button class="btn btn-primary" id="btnFeito" onclick="submit()" title="Buscar">Feito!</button>
+                    <button class="btn btn-primary" id="btnFeito" onclick="submit()" title="Buscar">Cadastrar Expertise</button>
                 </td>
             </tr>
         </div>
