@@ -6,7 +6,6 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
 <script src="@Url.Content("~/Scripts/ApplicationScripts/AjaxCalls.js")"></script>
 
 <article id="content">
@@ -27,7 +26,7 @@
                 </td>
                 <td>
                     @Html.Label("Biologia")
-                    <input type="checkbox" name="biologia" value="Biologia">
+                    <input type="checkbox" name="Biologia" value="Biologia">
                     <br>
                 </td>
                 <td>
@@ -77,11 +76,11 @@
                 </td>
                 <td>
                     @Html.Label("Cinema")
-                    <input type="checkbox" name="cinema" value="Cinema">
+                    <input type="text" name="cinema" value="Cinema">
                     <br>
                 </td>
                 <td>
-                    <a id="btnFeito" href="@Url.Action("ConfirmarExpertise")" title="Buscar">Feito!</a>
+                    <button class="btn btn-primary" id="btnFeito" onclick="submit()" title="Buscar">Feito!</button>
                 </td>
             </tr>
         </div>

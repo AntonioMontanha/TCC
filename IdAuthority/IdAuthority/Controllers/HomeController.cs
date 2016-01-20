@@ -45,15 +45,16 @@ namespace IdAuthority.Controllers
             return View("Error");
         }
 
-        public ActionResult ConfirmarExpertise()
-        {
-            return View();
-        }
-
+        
         [HttpPost]
         public ActionResult ConfirmarExpertise(MyAppUser model)
         {
-            return View("Index");
+            return View("Permissions");
+        }
+
+        public ActionResult OutraPagina()
+        {
+            return View("Permissions");
         }
     }
 }
