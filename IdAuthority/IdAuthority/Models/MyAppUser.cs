@@ -11,21 +11,7 @@ namespace IdAuthority.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-
-        public bool Historia { get; set; }
-        public bool Geografia { get; set; }
-        public bool Biologia { get; set; }
-        public bool Sociologia { get; set; }
-        public bool Filosofia { get; set; }
-        public bool Matematica { get; set; }
-        public bool Literatura { get; set; }
-        public bool Gramatica { get; set; }
-        public bool Fisica { get; set; }
-        public bool Quimica { get; set; }
-        public bool Politica { get; set; }
-        public bool Musica { get; set; }
-        public bool Cinema { get; set; }
-
+        
         [JsonProperty("picture")] // This renames the property to picture.
         [FacebookFieldModifier("type(large)")] // This sets the picture size to large.
         public FacebookConnection<FacebookPicture> ProfilePicture { get; set; }

@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Facebook;
 using Microsoft.AspNet.Facebook;
 using Microsoft.AspNet.Facebook.Client;
 using IdAuthority.Models;
-using IdAuthority.Models.Authority;
-using Newtonsoft.Json.Linq;
 
 namespace IdAuthority.Controllers
 {
@@ -41,7 +36,6 @@ namespace IdAuthority.Controllers
             return View("Error");
         }
 
-
         [HttpGet]
         public ActionResult Search(string PalavraChave)
         {
@@ -49,26 +43,19 @@ namespace IdAuthority.Controllers
 
             return View("Error");
         }
-
         
         [HttpPost]
-        public ActionResult ConfirmarExpertise(MyAppUser model)
+        public ActionResult CadastrarExpertise(MyAppUser model)
         {
             var accessToken = "CAAKCZC58CKWUBAIoSTN5BEFvDv02jHkonpg47hV8pMwyJ2TZAZABFx5qZCvJc6HMUfCmtCUqKk2hrjZCZCOkS4QM1ARsIfVdZCmxClhBfWdlpryaux9x4iXfgw5jqVzyK5nHGJwJdsekp041h0I99KZCI6qYmdQNiRDjENYtIfDoZC4gsLdKjmZBfJ6gjoqnZBK5upXynUXZAQuTGBrOwoT0zfma";
             var client = new FacebookClient(accessToken);
             dynamic me = client.Get("me");
-
-            
-
-
-
-
-            return View("Permissions");
+            return View("Index");
         }
 
-        public ActionResult OutraPagina()
+        public ActionResult BuscarAutoridadeCognitiva()
         {
-            return View("Permissions");
+            return View("BuscarAutoridadeCognitiva");
         }
     }
 }

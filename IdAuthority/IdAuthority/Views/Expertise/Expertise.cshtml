@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "CadastrarExpertise";
+}
+
+
+@model IdAuthority.Models.Expertise.ExpertiseDto
+
+<h2>CadastrarExpertise</h2>
+<article id="content">
+    @using (Html.BeginForm("SalvarExpertise", "Expertise"))
+    {
+        <div class="left" id="expertise">
+            <h4>Cadastre sua especialidade !</h4>
+            <tr>
+                <td>
+                    @Html.Label("História")
+                    @Html.CheckBoxFor(x => x.Historia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Geografia")
+                    @Html.CheckBoxFor(x => x.Geografia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Biologia")
+                    @Html.CheckBoxFor(x => x.Biologia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Sociologia")
+                    @Html.CheckBoxFor(x => x.Sociologia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Filosofia")
+                    @Html.CheckBoxFor(x => x.Filosofia)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Matemática")
+                    @Html.CheckBoxFor(x => x.Matematica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Literatura")
+                    @Html.CheckBoxFor(x => x.Literatura)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Gramática")
+                    @Html.CheckBoxFor(x => x.Gramatica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Física")
+                    @Html.CheckBoxFor(x => x.Fisica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Química")
+                    @Html.CheckBoxFor(x => x.Quimica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Política")
+                    @Html.CheckBoxFor(x => x.Politica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Música")
+                    @Html.CheckBoxFor(x => x.Musica)
+                    <br>
+                </td>
+                <td>
+                    @Html.Label("Cinema")
+                    @Html.CheckBoxFor(x => x.Cinema)
+                    <br>
+                </td>
+                <td>
+                    <button class="btn btn-primary" id="btnFeito" onclick="submit()" title="Buscar">Cadastrar Expertise</button>
+                </td>
+            </tr>
+        </div>
+    }
+    
+
+</article>

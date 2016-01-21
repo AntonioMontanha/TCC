@@ -1,6 +1,6 @@
-﻿namespace IdAuthority.Models.Expertise
+﻿namespace IdAuthority.Models.AutoridadeCognitiva
 {
-    public class ExpertiseDto
+    public class AutoridadeCognitivaDto
     {
         public bool Historia { get; set; }
         public bool Geografia { get; set; }
@@ -15,5 +15,10 @@
         public bool Politica { get; set; }
         public bool Musica { get; set; }
         public bool Cinema { get; set; }
+
+        public string PalavraChave1 { get; set; }
+        public string PalavraChave2 { get; set; }
+        public string PalavraChave3 { get; set; }
+
     }
 }
