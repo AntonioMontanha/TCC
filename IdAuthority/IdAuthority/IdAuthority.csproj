@@ -146,6 +146,9 @@
     <Compile Include="Controllers\ExpertiseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserRealtimeUpdateController.cs" />
+    <Compile Include="Core\AlgoritmoBuscaAutoridadeCognitiva.cs" />
+    <Compile Include="Core\Amigos.cs" />
+    <Compile Include="Core\Post.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,7 +200,7 @@
     <Content Include="Views\Expertise\Expertise.cshtml" />
     <Content Include="Views\Home\BuscarAutoridadeCognitiva.cshtml" />
     <Content Include="Views\AutoridadeCognitiva\AutoridadeCognitiva.cshtml" />
-    <Content Include="Views\AutoridadeCognitiva\Resultado.cshtml" />
+    <Content Include="Views\Resultado\Resultado.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
