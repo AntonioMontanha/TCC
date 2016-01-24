@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace IdAuthority.Core
 {
@@ -19,7 +20,7 @@ namespace IdAuthority.Core
         public bool Quimica { get; set; }
         public bool Politica { get; set; }
         public bool Musica { get; set; }
-        public bool Cinema { get; set; } 
+        public bool Cinema { get; set; }
         #endregion
     }
 }
