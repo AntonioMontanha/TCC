@@ -168,6 +168,7 @@
     <Content Include="Images\arrow.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\search.jpg" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="packages.config" />
     <Content Include="App_Data\BancoDeDados.db" />

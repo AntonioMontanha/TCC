@@ -3,85 +3,147 @@
 }
 @model IdAuthority.Models.AutoridadeCognitiva.AutoridadeCognitivaDto
 
+<div style="height: 65px; width: 100%; margin: 10px 0px; background-color: #6495ed; display: inline-flex; border-radius: 10px">
+    <div style="color: #fff; font-weight: bold; font-size: 25px; margin: auto">
+        Buscar Autoridades no assunto
+    </div>
+</div>
 
-<div class="right">
+<style>
+    tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #cccccc;
+    }
+</style>
+
+<div style="text-align: center">
     
     @using (Html.BeginForm("Search", "AutoridadeCognitiva"))
     {
-        <h4>Palavra Chave</h4>
+        <h4>Insira as palavras chave separadas por ponto e virgula ";"</h4>
         @Html.TextBoxFor(x => x.PalavraChave1)
-        <br>
-        @Html.TextBoxFor(x => x.PalavraChave2)
-        <br>
-        @Html.TextBoxFor(x => x.PalavraChave3)
-        <br>
-        <tr>
-            <td>
-                @Html.Label("História")
-                @Html.CheckBoxFor(x => x.Historia)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Geografia")
-                @Html.CheckBoxFor(x => x.Geografia)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Biologia")
-                @Html.CheckBoxFor(x => x.Biologia)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Sociologia")
-                @Html.CheckBoxFor(x => x.Sociologia)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Filosofia")
-                @Html.CheckBoxFor(x => x.Filosofia)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Matemática")
-                @Html.CheckBoxFor(x => x.Matematica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Literatura")
-                @Html.CheckBoxFor(x => x.Literatura)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Gramática")
-                @Html.CheckBoxFor(x => x.Gramatica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Física")
-                @Html.CheckBoxFor(x => x.Fisica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Química")
-                @Html.CheckBoxFor(x => x.Quimica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Política")
-                @Html.CheckBoxFor(x => x.Politica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Música")
-                @Html.CheckBoxFor(x => x.Musica)
-                <br>
-            </td>
-            <td>
-                @Html.Label("Cinema")
-                @Html.CheckBoxFor(x => x.Cinema)
-                <br>
-            </td>
-        </tr>
+        <br><br>
+        <table align="center" style="width: 240px; color: #333">
+            <tr>
+                <td>
+                    @Html.Label("História")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Historia)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Geografia")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Geografia)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Biologia")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Biologia)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Sociologia")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Sociologia)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Filosofia")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Filosofia)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Matemática")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Matematica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Literatura")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Literatura)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Gramática")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Gramatica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Física")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Fisica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Química")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Quimica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Política")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Politica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Música")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Musica)
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Cinema")
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => x.Cinema)
+                    <br>
+                </td>
+            </tr>
+        </table>
+        <br><br>
         <button class="btn btn-primary" id="btnFeito" onclick="submit()" title="Buscar">Pesquisar</button>
     }
 </div>
