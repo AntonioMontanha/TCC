@@ -10,8 +10,10 @@ namespace IdAuthority.Tests
 
         public Amigos Amigo1 { get; set; }
         public Amigos Amigo2 { get; set; }
+        public Amigos Amigo3 { get; set; }
         public Post PostAmigo1 { get; set; }
         public Post PostAmigo2 { get; set; }
+        public Post PostAmigo3 { get; set; }
 
 
         [SetUp]
@@ -44,8 +46,24 @@ namespace IdAuthority.Tests
                 Historia = false,
                 Posts = postsAmigo2,
                 Geografia = true
-            }; 
+            };
             #endregion
+
+            #region Amigo3
+            PostAmigo3 = new Post
+            {
+                Conteudo = "Primeira Guerra Mundial"
+            };
+            var postsAmigo3 = new List<Post>();
+            postsAmigo3.Add(PostAmigo3);
+            Amigo3 = new Amigos
+            {
+                Historia = false,
+                Posts = postsAmigo3,
+                Geografia = true
+            };
+            #endregion
+
         }
 
         [Test]
@@ -77,6 +95,27 @@ namespace IdAuthority.Tests
             Assert.AreEqual(resultado[0].Posts[0].Conteudo, PostAmigo2.Conteudo);
         }
 
+        [Test]
+        public void Deve_Ordenar_Os_Amigos()
+        {
+            var listaDeAmigos = new List<Amigos>();
+            listaDeAmigos.Add(Amigo1);
+            listaDeAmigos.Add(Amigo2);
+            listaDeAmigos.Add(Amigo3);
+            var algoritmo = new AlgoritmoBuscaAutoridadeCognitiva();
+            var resultado = algoritmo.BuscarAutoridadeCognitiva(listaDeAmigos, "Segunda", "Guerra", "Mundial");
 
+
+            Assert.AreEqual(resultado[0].Historia, true);
+            Assert.AreEqual(resultado[0].Geografia, false);
+            Assert.AreEqual(resultado[0].Posts[0].Conteudo, PostAmigo1.Conteudo);
+
+
+            Assert.AreEqual(resultado[1].Historia, false);
+            Assert.AreEqual(resultado[1].Geografia, true);
+            Assert.AreEqual(resultado[1].Posts[0].Conteudo, PostAmigo3.Conteudo);
+
+        }
     }
 }
+
