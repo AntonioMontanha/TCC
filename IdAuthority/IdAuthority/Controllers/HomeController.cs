@@ -90,5 +90,11 @@ namespace IdAuthority.Controllers
         {
             return View("BuscarAutoridadeCognitiva");
         }
+
+        public ActionResult SalvarExpertise()
+        {
+            return View("Index");
+        }
+
     }
 }

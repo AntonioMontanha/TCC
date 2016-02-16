@@ -8,12 +8,12 @@ namespace IdAuthority.Core
         public List<Amigos> BuscarAutoridadeCognitiva(List<Amigos> amigos, string palavraChave1, string palavraChave2, string palavraChave3)
         {
             var autoridadesCognitivas = new List<Amigos>();
-            foreach (var amigo in amigos) // Todo: para cada amigo
+            foreach (var amigo in amigos) //para cada amigo
             {
-                foreach (var post in amigo.Posts) //Todo: Para cada Post
+                foreach (var post in amigo.Posts) // Para cada Post
                 {
-                    if (post.Conteudo.Contains(palavraChave1)) //Todo: Verificar se o post tem as palavras-chave
-                        autoridadesCognitivas.Add(amigo); //Todo: Caso tenha, Adiciona o amigo na lista de autoridades cognitivas
+                    if (post.Conteudo.Contains(palavraChave1)) // Verificar se o post tem as palavras-chave
+                        autoridadesCognitivas.Add(amigo); // Caso tenha, Adiciona o amigo na lista de autoridades cognitivas
                     if (post.Conteudo.Contains(palavraChave2) && !(autoridadesCognitivas.Contains(amigo)))
                         autoridadesCognitivas.Add(amigo);
                     if (post.Conteudo.Contains(palavraChave3) && !(autoridadesCognitivas.Contains(amigo)))
@@ -21,7 +21,7 @@ namespace IdAuthority.Core
                 }
             }
 
-            autoridadesCognitivas = OdernarListaDeAmigosPorExpertise(autoridadesCognitivas); //Todo: Ordenar a lista de amigos que
+            autoridadesCognitivas = OdernarListaDeAmigosPorExpertise(autoridadesCognitivas); // Ordenar a lista de amigos por especialidade.
 
             return autoridadesCognitivas;
         }

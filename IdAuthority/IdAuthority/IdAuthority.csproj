@@ -158,8 +158,6 @@
     <Compile Include="Models\MyAppUser.cs" />
     <Compile Include="Models\FacebookPicture.cs" />
     <Compile Include="Models\FacebookPhoto.cs" />
-    <Compile Include="Models\Search\Search.cs" />
-    <Compile Include="Models\Search\SearchResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +166,7 @@
     <Content Include="Images\arrow.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Luke.png" />
     <Content Include="Images\search.jpg" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="packages.config" />
@@ -199,7 +198,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Expertise\Expertise.cshtml" />
-    <Content Include="Views\Home\BuscarAutoridadeCognitiva.cshtml" />
     <Content Include="Views\AutoridadeCognitiva\AutoridadeCognitiva.cshtml" />
     <Content Include="Views\Resultado\Resultado.cshtml" />
   </ItemGroup>

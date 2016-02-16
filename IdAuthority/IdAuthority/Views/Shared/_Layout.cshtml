@@ -8,6 +8,9 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/scripts")
+
+
+
 </head>
 <body>
     <script>
@@ -32,13 +35,20 @@
 
     <div id="wrapper">
         <header id="topHeader">
-            <h1>Id Authority</h1>
-            <span id="arrow"></span>
-            <h2>Encontre suas autoridades cognitivas, facilmente !</h2>
+            <h1>Looking For?</h1>
+            <span>
+                <tr>
+                    <td>
+                        <img src="~/Images/Luke.png" height="125" width="125" align="right" />
+                    </td>
+                </tr>
+            </span>
+            <h2>Talvez eu não possa te ajudar, mas eu sei alguém que pode!</h2>
         </header>
+
         @RenderBody()
         <footer>
-            <p>&copy; @DateTime.Now - Created by Antonio Montanha and Otávio Larrosa</p>
+            <p>&copy; @DateTime.Now - Created by Antonio Marcos Montanha Filho</p>
         </footer>
     </div>
 

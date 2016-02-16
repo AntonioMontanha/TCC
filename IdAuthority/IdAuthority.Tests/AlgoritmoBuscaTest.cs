@@ -110,7 +110,6 @@ namespace IdAuthority.Tests
             Assert.AreEqual(resultado[0].Geografia, false);
             Assert.AreEqual(resultado[0].Posts[0].Conteudo, PostAmigo1.Conteudo);
 
-
             Assert.AreEqual(resultado[1].Historia, false);
             Assert.AreEqual(resultado[1].Geografia, true);
             Assert.AreEqual(resultado[1].Posts[0].Conteudo, PostAmigo3.Conteudo);
